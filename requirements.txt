@@ -1,0 +1,4 @@
+Flask
+reportlab
+google-genai
+python-dotenv

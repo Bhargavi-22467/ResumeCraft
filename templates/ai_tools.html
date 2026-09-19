@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Resume Tools</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="logo">
+        ResumeCraft AI
+    </div>
+
+    <a href="/" class="nav-button">
+        Home
+    </a>
+
+</nav>
+
+
+<main class="builder-container">
+
+    <h1>AI Resume Tools</h1>
+
+    <p class="subtitle">
+        Improve your resume using AI assistance.
+    </p>
+
+
+    <!-- SUMMARY -->
+
+    <section class="form-section">
+
+        <h2>AI Professional Summary</h2>
+
+        <form
+            action="/ai-summary"
+            method="POST"
+            target="_blank"
+        >
+
+            <textarea
+                name="details"
+                rows="6"
+                placeholder="Enter your education, skills, projects and career interests..."
+                required
+            ></textarea>
+
+            <br><br>
+
+            <button
+                class="primary-button"
+                type="submit"
+            >
+                Generate Summary
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- BULLET -->
+
+    <section class="form-section">
+
+        <h2>Improve Resume Bullet</h2>
+
+        <form
+            action="/ai-bullet"
+            method="POST"
+            target="_blank"
+        >
+
+            <textarea
+                name="bullet"
+                rows="5"
+                placeholder="Enter your current resume bullet..."
+                required
+            ></textarea>
+
+            <br><br>
+
+            <button
+                class="primary-button"
+                type="submit"
+            >
+                Improve Bullet
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- JOB MATCH -->
+
+    <section class="form-section">
+
+        <h2>Job Description Matcher</h2>
+
+        <form
+            action="/ai-job-match"
+            method="POST"
+            target="_blank"
+        >
+
+            <label>
+                Resume
+            </label>
+
+            <textarea
+                name="resume"
+                rows="8"
+                placeholder="Paste your resume text..."
+                required
+            ></textarea>
+
+
+            <label>
+                Job Description
+            </label>
+
+            <textarea
+                name="job_description"
+                rows="8"
+                placeholder="Paste the job description..."
+                required
+            ></textarea>
+
+            <br><br>
+
+            <button
+                class="primary-button"
+                type="submit"
+            >
+                Analyze Job Match
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- COVER LETTER -->
+
+    <section class="form-section">
+
+        <h2>AI Cover Letter</h2>
+
+        <form
+            action="/ai-cover-letter"
+            method="POST"
+            target="_blank"
+        >
+
+            <label>
+                Resume
+            </label>
+
+            <textarea
+                name="resume"
+                rows="8"
+                placeholder="Paste your resume..."
+                required
+            ></textarea>
+
+
+            <label>
+                Job Description
+            </label>
+
+            <textarea
+                name="job_description"
+                rows="8"
+                placeholder="Paste the job description..."
+                required
+            ></textarea>
+
+            <br><br>
+
+            <button
+                class="primary-button"
+                type="submit"
+            >
+                Generate Cover Letter
+            </button>
+
+        </form>
+
+    </section>
+
+
+</main>
+
+
+</body>
+
+</html>

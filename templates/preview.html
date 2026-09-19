@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ resume["name"] }} - Resume</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="preview-page">
+
+
+    <div class="preview-actions">
+
+        <a href="/builder"
+           class="secondary-button">
+            Create Another
+        </a>
+
+        <a href="/download/{{ resume['id'] }}"
+           class="primary-button">
+            Download PDF
+        </a>
+
+    </div>
+
+
+    <main class="resume-paper">
+
+
+        <header class="resume-header">
+
+            <h1>
+                {{ resume["name"] }}
+            </h1>
+
+            <p>
+
+                {{ resume["email"] }}
+
+                {% if resume["phone"] %}
+                    | {{ resume["phone"] }}
+                {% endif %}
+
+                {% if resume["location"] %}
+                    | {{ resume["location"] }}
+                {% endif %}
+
+            </p>
+
+
+            <p>
+
+                {% if resume["linkedin"] %}
+                    {{ resume["linkedin"] }}
+                {% endif %}
+
+                {% if resume["github"] %}
+                    | {{ resume["github"] }}
+                {% endif %}
+
+            </p>
+
+        </header>
+
+
+        {% if resume["summary"] %}
+
+        <section class="resume-section">
+
+            <h2>Professional Summary</h2>
+
+            <p>
+                {{ resume["summary"] }}
+            </p>
+
+        </section>
+
+        {% endif %}
+
+
+        {% if resume["education"] %}
+
+        <section class="resume-section">
+
+            <h2>Education</h2>
+
+            <p class="preserve-lines">
+                {{ resume["education"] }}
+            </p>
+
+        </section>
+
+        {% endif %}
+
+
+        {% if resume["skills"] %}
+
+        <section class="resume-section">
+
+            <h2>Skills</h2>
+
+            <p class="preserve-lines">
+                {{ resume["skills"] }}
+            </p>
+
+        </section>
+
+        {% endif %}
+
+
+        {% if resume["experience"] %}
+
+        <section class="resume-section">
+
+            <h2>Experience</h2>
+
+            <p class="preserve-lines">
+                {{ resume["experience"] }}
+            </p>
+
+        </section>
+
+        {% endif %}
+
+
+        {% if resume["projects"] %}
+
+        <section class="resume-section">
+
+            <h2>Projects</h2>
+
+            <p class="preserve-lines">
+                {{ resume["projects"] }}
+            </p>
+
+        </section>
+
+        {% endif %}
+
+
+        {% if resume["certifications"] %}
+
+        <section class="resume-section">
+
+            <h2>Certifications</h2>
+
+            <p class="preserve-lines">
+                {{ resume["certifications"] }}
+            </p>
+
+        </section>
+
+        {% endif %}
+
+
+        {% if resume["achievements"] %}
+
+        <section class="resume-section">
+
+            <h2>Achievements</h2>
+
+            <p class="preserve-lines">
+                {{ resume["achievements"] }}
+            </p>
+
+        </section>
+
+        {% endif %}
+
+
+    </main>
+
+</body>
+
+</html>
